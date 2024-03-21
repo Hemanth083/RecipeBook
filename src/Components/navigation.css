@@ -1,0 +1,48 @@
+section {
+  border-color: transparent;
+  font-family: "regular";
+}
+.ant-select {
+  border: none; /* Remove the border */
+  font-family: "regular";
+}
+
+.ant-select-selector {
+  border: none !important; /* Remove the border */
+  font-family: "regular";
+}
+
+.ant-select-placeholder {
+  color: black; /* Set the placeholder color to black */
+  font-family: "regular";
+}
+.headerFont.select .ant-select-selector {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: black;
+  font-family: "regular";
+}
+.custom-navigation {
+  background-color: transparent;
+  font-family: "regular";
+  height: 10vh;
+  position: absolute;
+}
+@font-face {
+  font-family: "ko";
+  src: url(".././/../assets/fonts/Nothing_You_Could_Do,Ojuju/Nothing_You_Could_Do/NothingYouCouldDo-Regular.ttf");
+}
+h1,
+p,
+h2,
+button {
+  font-family: "regular";
+}
+
+.headerFont {
+  font-family: "ko";
+  font-weight: 600;
+
+  font-size: large;
+}

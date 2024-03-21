@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "regular";
+  src: url("..//../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf");
+}
+.title {
+  font-family: "regular";
+  font-size: 5px;
+  font-weight: 100;
+}
