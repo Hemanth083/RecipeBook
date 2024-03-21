@@ -10,7 +10,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/recipes' element={<Recipes />} />
-        <Route path="/recipe/:id" component={RecipeDetails} /> {/* Route for recipe details */}
       </Routes>
     </BrowserRouter >
   );

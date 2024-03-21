@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Spin, List, Card, Space, Typography, Row, Col, Select, Input, Flex, Modal } from 'antd';
 import NavigationBar from '../Components/NavigationBar';
 import axios from 'axios';
@@ -17,13 +16,13 @@ function RecipePage() {
     const [selectedRecipe, setSelectedRecipe] = useState(null);
 
     useEffect(() => {
-        fetchData(); // Fetch recipes when component mounts
+        fetchData();
     }, []);
 
     const fetchData = async () => {
         setLoading(true);
         try {
-            const apiKey = "49cb99e25b254216b632d76a5dc98a02"; // Replace with your Spoonacular API key
+            const apiKey = "e3eb9cfac06c41a280acf5280d90d0dc";
             const response = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=15`);
             setRecipes(response.data.recipes);
             setLoading(false);
@@ -37,7 +36,7 @@ function RecipePage() {
     const handleSearch = async (value) => {
         setLoading(true);
         try {
-            const apiKey = "49cb99e25b254216b632d76a5dc98a02";
+            const apiKey = "e3eb9cfac06c41a280acf5280d90d0dc";
             const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${value}&number=20`);
             setRecipes(response.data.results);
             setLoading(false);
@@ -51,7 +50,7 @@ function RecipePage() {
     const handleCategoryChange = async (value) => {
         setLoading(true);
         try {
-            const apiKey = "49cb99e25b254216b632d76a5dc98a02";
+            const apiKey = "e3eb9cfac06c41a280acf5280d90d0dc";
             const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${value}&number=10`);
             setRecipes(response.data.results);
             setLoading(false);
@@ -107,7 +106,7 @@ function RecipePage() {
                             <Space size={3}>
                                 <Card style={{ width: '250px' }}
                                     hoverable
-                                    cover={<img alt={recipe.title} src={recipe.image} style={{ Height: 'auto', width: "250px" }} />}
+                                    cover={<img loading="lazy" alt={recipe.title} src={recipe.image} style={{ Height: 'auto', width: "250px" }} />}
                                     onClick={() => handleRecipeClick(recipe)} // Show recipe details modal on click
                                 >
                                     <Card.Meta
@@ -126,10 +125,10 @@ function RecipePage() {
                     visible={modalVisible}
                     onCancel={handleModalClose}
                     footer={null}
-                    width="50vw" // Set modal width
+                    width="50vw"
                 >
                     <div>
-                        <img src={selectedRecipe.image} alt={selectedRecipe.title} style={{ width: '100%' }} />
+                        <img loading="lazy" src={selectedRecipe.image} alt={selectedRecipe.title} style={{ width: '100%' }} />
                         <Title level={4}>Ingredients:</Title>
 
                         {selectedRecipe.extendedIngredients.map(ingredient => (

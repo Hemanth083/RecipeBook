@@ -7,9 +7,10 @@
   justify-content: center;
   height: 900px;
 }
-.Mainhome {
+.Mainhome,.container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 500px;
 }
