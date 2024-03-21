@@ -23,7 +23,7 @@ function RecipePage() {
     const fetchData = async () => {
         setLoading(true);
         try {
-            const apiKey = "4e62eebeba7e4a7c9763943ee54105b8"; // Replace with your Spoonacular API key
+            const apiKey = "49cb99e25b254216b632d76a5dc98a02"; // Replace with your Spoonacular API key
             const response = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=15`);
             setRecipes(response.data.recipes);
             setLoading(false);
@@ -37,7 +37,7 @@ function RecipePage() {
     const handleSearch = async (value) => {
         setLoading(true);
         try {
-            const apiKey = "4e62eebeba7e4a7c9763943ee54105b8";
+            const apiKey = "49cb99e25b254216b632d76a5dc98a02";
             const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${value}&number=20`);
             setRecipes(response.data.results);
             setLoading(false);
@@ -51,7 +51,7 @@ function RecipePage() {
     const handleCategoryChange = async (value) => {
         setLoading(true);
         try {
-            const apiKey = "4e62eebeba7e4a7c9763943ee54105b8";
+            const apiKey = "49cb99e25b254216b632d76a5dc98a02";
             const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${value}&number=10`);
             setRecipes(response.data.results);
             setLoading(false);
